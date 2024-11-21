@@ -101,40 +101,40 @@ export function PaymentDashboard() {
       }
    }, [data]);
 
-   useEffect(() => {
-      const fetchData = async () => {
-         try {
-            const token = Cookies.get("token");
-            if (!token) {
-               router.push("/Auth");
-            } else {
-               console.log("Token:", token);
-               const response = await axios.get(`${SERVER_PORT}Cart`, {
-                  headers: {
-                     Authorization: `Bearer ${token}`,
-                  },
-               });
+   // useEffect(() => {
+   //    const fetchData = async () => {
+   //       try {
+   //          const token = Cookies.get("token");
+   //          if (!token) {
+   //             router.push("/auth");
+   //          } else {
+   //             console.log("Token:", token);
+   //             const response = await axios.get(`${SERVER_PORT}Cart`, {
+   //                headers: {
+   //                   Authorization: `Bearer ${token}`,
+   //                },
+   //             });
 
-               setData(response.data);
-            }
-         } catch (error: any) {
-            if (error.response) {
-               // Xử lý lỗi cụ thể từ server (ví dụ: 401 Unauthorized)
-               setError(
-                  error.response.data.message || error.response.statusText
-               );
-            } else if (error.request) {
-               // Yêu cầu đã được gửi nhưng không nhận được phản hồi
-               setError("No response from server");
-            } else {
-               // Xử lý các lỗi khác
-               setError(error.message);
-            }
-         }
-      };
+   //             setData(response.data);
+   //          }
+   //       } catch (error: any) {
+   //          if (error.response) {
+   //             // Xử lý lỗi cụ thể từ server (ví dụ: 401 Unauthorized)
+   //             setError(
+   //                error.response.data.message || error.response.statusText
+   //             );
+   //          } else if (error.request) {
+   //             // Yêu cầu đã được gửi nhưng không nhận được phản hồi
+   //             setError("No response from server");
+   //          } else {
+   //             // Xử lý các lỗi khác
+   //             setError(error.message);
+   //          }
+   //       }
+   //    };
 
-      fetchData();
-   }, [router]);
+   //    fetchData();
+   // }, [router]);
 
    return (
       <TooltipProvider>
