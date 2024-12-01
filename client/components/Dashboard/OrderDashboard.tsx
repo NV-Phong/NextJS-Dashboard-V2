@@ -78,7 +78,15 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { NextStep } from "../Custom/NextStep";
-import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogTitle, AlertDialogDescription, AlertDialogCancel, AlertDialogAction } from "@radix-ui/react-alert-dialog";
+import {
+   AlertDialog,
+   AlertDialogTrigger,
+   AlertDialogContent,
+   AlertDialogTitle,
+   AlertDialogDescription,
+   AlertDialogCancel,
+   AlertDialogAction,
+} from "@radix-ui/react-alert-dialog";
 import { AlertDialogHeader, AlertDialogFooter } from "../ui/alert-dialog";
 import { Payment } from "../Orders/Payment";
 const SERVER_PORT = process.env.NEXT_PUBLIC_PORT;
@@ -87,7 +95,7 @@ export function OrderDashboard() {
    const [data, setData] = useState<any>(null);
    const [error, setError] = useState<string | null>(null);
    const router = useRouter();
-   
+
    const [totalPrice, setTotalPrice] = useState(0);
 
    useEffect(() => {
@@ -952,7 +960,7 @@ export function OrderDashboard() {
                            <Pagination className="ml-auto mr-0 w-auto">
                               <PaginationContent>
                                  <PaginationItem>
-                                    <Payment/>
+                                    <Payment />
                                  </PaginationItem>
                               </PaginationContent>
                            </Pagination>

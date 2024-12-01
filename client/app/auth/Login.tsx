@@ -180,7 +180,7 @@ const Login: React.FC = () => {
                         Cancel
                      </Button>
                      <Button
-                        className="glow1"
+                        className="glow5"
                         type="submit"
                         disabled={isSubmitting}
                      >
